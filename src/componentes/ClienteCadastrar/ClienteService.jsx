@@ -22,7 +22,7 @@ const ClienteService = {
           data: {
             logradouro: responseData.data.logradouro,
             bairro: responseData.data.bairro,
-            cidade: responseData.data.localidade, // Aqui está a correção principal
+            cidade: responseData.data.localidade, 
             complemento: responseData.data.complemento
           }
         };

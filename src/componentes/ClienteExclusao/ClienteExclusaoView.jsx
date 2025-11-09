@@ -11,7 +11,7 @@ function ClienteExclusaoView({ cpf, setCpf, loading, mensagem, onSubmit }) {
   return (
     <>
       <div className="top-bar">Sistema Integrado de Gestão</div>
-      <div className="title-consultar-view">Consultar Cliente por CPF</div>
+     
       <div className="form-container">
         <h2>Excluir Cliente</h2>
         <form onSubmit={onSubmit} style={{ maxWidth: 420 }}>
@@ -36,7 +36,6 @@ function ClienteExclusaoView({ cpf, setCpf, loading, mensagem, onSubmit }) {
           </div>
           <div className="button-group">
             <div className="button-group-item"></div>
-          
           <div style={{ display: "flex", gap: 8 }}>
             <button type="submit" className="button" disabled={loading}>
               {loading ? "Excluindo..." : "Excluir"}

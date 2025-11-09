@@ -1,4 +1,4 @@
-// ...existing code...
+// Componente de visualização
 import React from "react";
 import "./styles.css";
 import ClienteService from "./ClienteService";  
@@ -33,8 +33,8 @@ const ClienteCadastrarView = ({
         if (response.data) {
           setEndereco(response.data.logradouro || '');
           setBairro(response.data.bairro || '');
-          setCidade(response.data.cidade || ''); // Agora usando o campo cidade mapeado corretamente
-          setComplemento(response.data.complemento || '');
+          setCidade(response.data.cidade || ''); 
+          
         }
       } catch (error) {
         console.error('Erro ao buscar CEP:', error);
@@ -183,17 +183,12 @@ const ClienteCadastrarView = ({
           />
         </div>
 
-        <div className="button-container1">
+        <div className="button-group form-grid-full-width">
           <button id="confirmar" type="submit" className="button">
             Confirmar
           </button>
-          <button
-            id="voltar"
-            type="button"
-            className="button"
-            onClick={handleVoltar}
-          >
-            Voltar
+          <button id="voltar" type="button" className="button" onClick={handleVoltar}>
+              Voltar   
           </button>
         </div>
       </form>
@@ -203,4 +198,4 @@ const ClienteCadastrarView = ({
 };
 
 export default ClienteCadastrarView;
-// ...existing code...
+

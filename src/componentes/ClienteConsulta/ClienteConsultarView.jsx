@@ -38,8 +38,10 @@ function ClienteConsultarView({ clientes, loading, error, onVoltar }) {
   };
 
   return (
+    
     <div className="cliente-consulta-container">
-      <h2>Consulta de Clientes</h2>
+      <div className="top-bar">Sistema Integrado de Gestão</div>
+      <div className="title-consultar-view">Consulta de Clientes</div>
       <table className="cliente-table">
         <thead>
           <tr>
@@ -70,28 +72,31 @@ function ClienteConsultarView({ clientes, loading, error, onVoltar }) {
       </table>
 
       <div className="paginacao-container">
-        <button 
-          onClick={paginaAnterior} 
-          disabled={currentPage === 1}
-          className="button paginacao-button"
-        >
-          Anterior
-        </button>
-        <span className="paginacao-info">
-          Página {currentPage} de {totalPaginas}
-        </span>
-        <button 
-          onClick={proximaPagina} 
-          disabled={currentPage === totalPaginas}
-          className="button paginacao-button"
-        >
-          Próxima
-        </button>
-      </div>
+          <button
+            onClick={paginaAnterior}
+            disabled={currentPage === 1}
+            className="button paginacao-button"
+          >
+            Anterior
+          </button>
+          <span className="paginacao-info">
+            Página {currentPage} de {totalPaginas}
+          </span>
+          <button
+            onClick={proximaPagina}
+            disabled={currentPage === totalPaginas}
+            className="button paginacao-button"
+          >
+            Próxima
+          </button>
+        </div>
 
-      <button  id="voltar" onClick={onVoltar} className="button">
-        Voltar
-      </button>
+        <div style={{ textAlign: "center", marginTop: "5px" }}>
+          <button id="voltar" onClick={onVoltar} className="button">
+            Voltar
+          </button>
+        </div>
+
     </div>
   );
 }

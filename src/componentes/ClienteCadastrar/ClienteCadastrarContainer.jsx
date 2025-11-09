@@ -9,6 +9,9 @@ import ClienteService from "./ClienteService"; // container consome esse servico
 //2-retorna o componente de visualização (ClienteCadastrarView) passando os estados e manipuladores como props
 //3-o formulario coleta os dados setCpf/setNome/setCep/setComplemento/setEmail isso atualiza os estado do container
 //4-e provoca nova renderizacao da view
+//5-quando o formulario e submetido, handleSubmit e chamado
+//6-handleSubmit coleta os dados do estado e chama o servico ClienteService.cadastrar para enviar os dados ao backend
+//7-apos o cadastro, atualiza a mensagem de feedback com sucesso ou erro (setMensagem - esta msg deve ser melhorada)
 //*********************************************************************************** */
 const ClienteCadastrarContainer = () => {
   const navigate = useNavigate();
@@ -33,9 +36,9 @@ const ClienteCadastrarContainer = () => {
       cpf,
       nome,
       cep,
-      endereco,    // Incluindo os novos campos
-      bairro,      // no objeto de dados
-      cidade,      // do cliente
+      endereco,
+      bairro,
+      cidade,
       complemento,
       email,
     };

@@ -12,7 +12,7 @@ const ClienteConsultaCpfView = ({
   return (
     <>
       <div className="top-bar">Sistema Integrado de Gestão</div>
-      <div className="title-consultar-view">Consultar Cliente por CPF</div>
+      
       <div className="form-container">
         <h2>Consultar Cliente</h2>
 
