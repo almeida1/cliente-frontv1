@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useNavigate } from "react-router-dom";
 
 // Remova a importação do Container, pois não é necessária aqui
@@ -21,6 +22,7 @@ function ClienteExclusaoView({ cpf, setCpf, loading, mensagem, onSubmit }) {
               <input
                 id="cpfInput"
                 type="text"
+                data-testid="excluir-cpf-input"
                 value={cpf}
                 onChange={(e) => setCpf(e.target.value)}
                 placeholder="Digite o CPF (somente números ou formatado)"
@@ -35,18 +37,17 @@ function ClienteExclusaoView({ cpf, setCpf, loading, mensagem, onSubmit }) {
             </div>
           </div>
           <div className="button-group">
-            <div className="button-group-item"></div>
+            
           <div style={{ display: "flex", gap: 8 }}>
-            <button type="submit" className="button" disabled={loading}>
-              {loading ? "Excluindo..." : "Excluir"}
+            <button type="submit" className="button" data-testid="excluir-cliente-button" >
+                Excluir
             </button>
-            <button type="button" className="button" onClick={handleBackToMenu} disabled={loading}>
+            <button type="button" className="button" onClick={handleBackToMenu} data-testid="excluir-voltar-button" disabled={loading}>
               Voltar
             </button>
           </div>
           </div>
-
-          {mensagem && (
+           {mensagem && (
             <div
               role="status"
               style={{
@@ -60,10 +61,13 @@ function ClienteExclusaoView({ cpf, setCpf, loading, mensagem, onSubmit }) {
               {mensagem.texto}
             </div>
           )}
+          
         </form>
       </div>
     </>
   );
 }
+
+
 
 export default ClienteExclusaoView;
